@@ -8,6 +8,7 @@ class CustomListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+    padding: EdgeInsets.symmetric(vertical: 16),
       itemBuilder:
           (context, index) => Padding(
             padding: EdgeInsets.only(bottom: 10),
