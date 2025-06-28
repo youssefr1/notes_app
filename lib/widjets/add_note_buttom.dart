@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notesapp/widjets/custom_textfeild.dart';
 
 class AddNoteButtom extends StatelessWidget {
   const AddNoteButtom({super.key});
@@ -18,43 +19,15 @@ class AddNoteButtom extends StatelessWidget {
               left: 16,
               right: 16,
             ),
-            child: TextField(
-              cursorColor: Colors.greenAccent,
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                labelText: 'Title',
-                labelStyle: TextStyle(color: Colors.greenAccent),
-                enabledBorder: BuildBorder(),
-                focusedBorder: BuildBorder(),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
+            child: CustomTextfeild(text: 'Title')
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              top: 24,
-              left: 16,
-              right: 16,
-            ),
-            child: TextField(
-              style: TextStyle(color: Colors.white),
-              cursorColor:Colors.greenAccent,
-              minLines: null,
-              maxLines: 7,
-              textInputAction: TextInputAction.done, // ✅ ده يحل المشكلة
-              decoration: InputDecoration(
-                labelText: 'Content',
-                labelStyle: TextStyle(color: Colors.greenAccent),
-                contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12), // 👈 padding بسيط
-                enabledBorder: BuildBorder(),
-                focusedBorder: BuildBorder(),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
+              padding: const EdgeInsets.only(
+                top: 24,
+                left: 16,
+                right: 16,
               ),
-            )
+              child: CustomTextfeild(text: 'Content',maxLines: 7,)
 
           ),
           Padding(
@@ -67,10 +40,13 @@ class AddNoteButtom extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Add'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.greenAccent,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))
+                    backgroundColor: Colors.greenAccent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16))
                 ),
+                child: Text(
+                  'Add', style: TextStyle(color: Colors.black),),
               ),
             ),
           ),
@@ -79,13 +55,4 @@ class AddNoteButtom extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder BuildBorder() {
-    return OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(
-                  color: Colors.white,
-                  width: 2,
-                ),
-              );
-  }
 }
