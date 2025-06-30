@@ -39,18 +39,21 @@ dependencies:
   hive_flutter: ^1.1.0
 
 
+
+
 dev_dependencies:
-  hive_generator: ^2.0.0
-  build_runner: ^2.3.2
+
   flutter_test:
     sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
+  # encourage good coding practices. The liflutter pub add --dev hive_generatornt set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.5.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
