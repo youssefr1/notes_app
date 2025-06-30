@@ -9,6 +9,7 @@ final int maxLines;
     return TextField(
       cursorColor: Colors.greenAccent,
       maxLines: maxLines,
+        textInputAction: TextInputAction.done ,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         labelText: text,
