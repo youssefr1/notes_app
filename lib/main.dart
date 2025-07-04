@@ -7,13 +7,15 @@ import 'package:notesapp/views/notes_view.dart';
 import 'constants.dart';
 import 'models/note_model.dart';
 
-void main() async{
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // ضروري في async main
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
-  await Hive.openBox(kNotesBox);
-   Hive.registerAdapter(NoteModelAdapter());
+  Hive.registerAdapter(NoteModelAdapter());
+  await Hive.openBox<NoteModel>(kNotesBox);
   runApp(const NotesApp());
 }
+
 
 class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
