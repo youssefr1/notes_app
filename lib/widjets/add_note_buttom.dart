@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notesapp/cubits/add_note_cubit/add_note__cubit.dart';
-
 import 'add_note_form.dart';
 
 class AddNoteButtom extends StatelessWidget {
@@ -11,7 +10,9 @@ class AddNoteButtom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.grey.shade900,
-      child:  Padding(
+      child:  BlocProvider(
+  create: (context) => AddNoteCubit(),
+  child: Padding(
         padding: EdgeInsets.symmetric(
             vertical: 16, horizontal: 16),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
@@ -29,6 +30,7 @@ class AddNoteButtom extends StatelessWidget {
           },
         ),
       ),
+),
     );
   }
 }

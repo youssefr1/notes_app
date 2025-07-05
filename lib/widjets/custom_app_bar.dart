@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-   CustomAppBar({super.key, required this.text, required this.icon});
+  const CustomAppBar({super.key, required this.text, required this.icon});
  final String text;
  final IconData icon;
   @override

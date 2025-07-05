@@ -8,7 +8,7 @@ import 'constants.dart';
 import 'models/note_model.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // ضروري في async main
+
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
@@ -22,16 +22,13 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [BlocProvider(create: (context)=>AddNoteCubit())],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.grey.shade900,
-          fontFamily: 'Poppins',
-        ),
-        home: NotesView(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey.shade900,
+        fontFamily: 'Poppins',
       ),
+      home: NotesView(),
     );
   }
 }
