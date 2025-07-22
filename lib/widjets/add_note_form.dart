@@ -28,11 +28,14 @@ class _AddNoteFormState extends State<AddNoteForm> {
       child: Column(
         children: [
           SizedBox(height: 8),
-          CustomTextfeild(
-            text: 'title',
-            onsaved: (value) {
-              title = value;
-            },
+          Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: CustomTextfeild(
+              text: 'title',
+              onsaved: (value) {
+                title = value;
+              },
+            ),
           ),
           SizedBox(height: 16),
           CustomTextfeild(
@@ -42,7 +45,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subtitle = value;
             },
           ),
-          SizedBox(height: 95),
+          SizedBox(height: 50),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButtom(
@@ -65,7 +68,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 },
               );
             },
-          ),
+          ), SizedBox(height: 10),
         ],
       ),
     );
