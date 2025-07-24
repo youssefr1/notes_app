@@ -20,7 +20,7 @@ class CustomListViewBuilder extends StatelessWidget {
               (context, index) =>
               Padding(
                 padding: EdgeInsets.only(bottom: 10),
-                child: CustomNotesItem(),
+                child: CustomNotesItem(note: notes[index],),
               ),
         );
       },
