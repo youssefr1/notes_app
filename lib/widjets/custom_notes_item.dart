@@ -30,7 +30,7 @@ final NoteModel note;
               ListTile(
                 title: Text(
                   note.title,
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,),
                 ),
                 subtitle: Padding(
                   padding: const EdgeInsets.only(top: 16),
@@ -38,7 +38,7 @@ final NoteModel note;
                     note.subTitle,
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.black.withOpacity(0.4),
+                      color: Colors.black.withOpacity(0.6),
                     ),
                   ),
                 ),
